@@ -1,11 +1,10 @@
-# Spectrum
+# Spectrum — Deterministic Measurement Infrastructure
 
-Deterministic measurement and reproducibility engines.
+Commercial-grade deterministic measurement and audit engines.
 
+## Guarantees
+- Determinism
+- Bit-identical reproducibility
 - No randomness
-- No sampling
-- No training
-- Post-hoc only
-- Bit-identical outputs
-
-This repository is the commercial-grade implementation line.
+- No learning
+- Full audit traceability
