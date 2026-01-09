@@ -53,14 +53,14 @@ class TestBasicOperations:
     
     def test_divide_by_zero_raises_error(self):
         """Test that division by zero raises ValueError deterministically."""
-        with pytest.raises(ValueError, match="Division by zero"):
+        with pytest.raises(ValueError, match="Division by zero is not allowed"):
             divide(10.0, 0.0)
         
         # Verify it raises the same error consistently
-        with pytest.raises(ValueError, match="Division by zero"):
+        with pytest.raises(ValueError, match="Division by zero is not allowed"):
             divide(10.0, 0.0)
         
-        with pytest.raises(ValueError, match="Division by zero"):
+        with pytest.raises(ValueError, match="Division by zero is not allowed"):
             divide(5.0, 0.0)
 
 
@@ -196,7 +196,7 @@ class TestReplay:
         ]
         
         # Original execution should fail
-        with pytest.raises(ValueError, match="Division by zero"):
+        with pytest.raises(ValueError, match="Division by zero is not allowed"):
             run_deterministic(instructions)
         
         # If we had a partial log (only the first instruction)
@@ -302,7 +302,7 @@ class TestErrorHandling:
             {'operation': 'multiply', 'a': 2, 'b': 4}  # Should not execute
         ]
         
-        with pytest.raises(ValueError, match="Division by zero"):
+        with pytest.raises(ValueError, match="Division by zero is not allowed"):
             run_deterministic(instructions)
     
     def test_empty_instructions(self):
