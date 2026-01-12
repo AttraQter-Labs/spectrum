@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -8,3 +9,10 @@ dist/
 build/
 .eggs/
 *.egg-info/
+
+# Project-specific directories
+outputs/
+artifacts/
+cache/
+tmp/
+/.pytest_cache/
