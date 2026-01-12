@@ -18,3 +18,18 @@ This system is:
 - Free of randomness, time, environment, or floating-point dependence
 
 Given identical inputs, all compliant executions produce bit-identical outputs.
+
+## Phase 2 Core Freeze
+
+This repository contains a **deterministic, non-learning, replayable engine core**.
+
+Phase 2 guarantees:
+- Exact arithmetic only (integers / rationals)
+- No randomness, time, environment, or floating point
+- Immutable state objects
+- Canonical ordering for all collections
+- Bit-identical results for identical inputs
+- Full third-party replayability
+
+Phase 2 defines **interfaces and contracts only**.
+No heuristic, probabilistic, or adaptive behavior exists at this layer.
