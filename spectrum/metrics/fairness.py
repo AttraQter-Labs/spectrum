@@ -29,8 +29,7 @@ def demographic_parity_rates(outputs: List[int], groups: List[Any]) -> Dict[Any,
     return {g: Fraction(positives[g], totals[g]) for g in sorted(totals.keys())}
 
 
-def demographic_parity_difference(outputs: List[int], groups: List[Any], 
-                                   reference_group: Any = None) -> Fraction:
+def demographic_parity_difference(outputs: List[int], groups: List[Any]) -> Fraction:
     """Calculate demographic parity difference using exact rational arithmetic.
     
     Computes max_group(rate) - min_group(rate) for demographic parity.
@@ -38,7 +37,6 @@ def demographic_parity_difference(outputs: List[int], groups: List[Any],
     Args:
         outputs: List of binary predictions (0 or 1)
         groups: List of group identifiers (same length as outputs)
-        reference_group: Optional specific group to use as reference (unused if None)
         
     Returns:
         Maximum difference in positive rates as a Fraction

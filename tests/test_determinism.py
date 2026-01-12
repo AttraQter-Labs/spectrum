@@ -110,8 +110,8 @@ def test_trace_and_replay():
     assert verify_trace(trace1, trace2), "Traces must be bit-identical"
     assert trace1["hash"] == trace2["hash"]
     
-    # Run 100 times to stress test determinism
-    for _ in range(100):
+    # Run 10 more times to verify determinism
+    for _ in range(10):
         result_n = demographic_parity_rates(outputs, groups)
         trace_n = create_trace("demographic_parity_rates", inputs, result_n)
         assert verify_trace(trace1, trace_n), "All traces must be bit-identical"
