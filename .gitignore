@@ -15,3 +15,4 @@ outputs/
 artifacts/
 cache/
 tmp/
+/.pytest_cache/
