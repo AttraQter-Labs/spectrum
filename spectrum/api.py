@@ -85,7 +85,7 @@ def _serialize_for_trace(obj: Any) -> Any:
     if isinstance(obj, Fraction):
         return f"{obj.numerator}/{obj.denominator}"
     elif isinstance(obj, dict):
-        return {k: _serialize_for_trace(v) for k in sorted(obj.keys())}
+        return {k: _serialize_for_trace(obj[k]) for k in sorted(obj.keys())}
     elif isinstance(obj, (list, tuple)):
         return [_serialize_for_trace(item) for item in obj]
     else:
