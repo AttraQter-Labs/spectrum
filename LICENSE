@@ -1,13 +1,43 @@
-Copyright (c) 2026 AttraQter Labs LLC
+SPECTRUM COMMERCIAL LICENSE — BASELINE
 
+Copyright (c) AttraQter Labs.
 All rights reserved.
 
-This software is licensed for commercial use only under a paid license
-agreement with AttraQter Labs LLC.
+This software ("Spectrum") is proprietary and confidential.
 
-Unauthorized copying, modification, distribution, sublicensing, or use
-without an explicit written agreement is strictly prohibited.
+1. GRANT
+No license is granted by default.
+Use, reproduction, modification, or distribution is prohibited
+without an explicit written commercial agreement.
 
-This software is provided "as is" without warranty of any kind.
+2. PERMITTED USE
+Permitted use is limited strictly to the terms of a signed license
+issued by AttraQter Labs.
 
-Contact: licensing@attraqterlabs.com
+3. RESTRICTIONS
+You may not:
+- Reverse engineer
+- Decompile
+- Disassemble
+- Modify execution semantics
+- Circumvent determinism guarantees
+- Remove audit or trace mechanisms
+
+4. OWNERSHIP
+All intellectual property remains the exclusive property of
+AttraQter Labs.
+
+5. NO WARRANTY
+The software is provided "AS IS" unless otherwise stated
+in a separate commercial agreement.
+
+6. LIABILITY
+In no event shall AttraQter Labs be liable for damages arising
+from unauthorized use.
+
+7. TERMINATION
+Any unauthorized use immediately terminates all rights.
+
+8. GOVERNING LAW
+To be defined in the executed commercial agreement.
+
