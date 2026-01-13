@@ -1,19 +1,24 @@
-Copyright (c) 2026 AttraQtor-Labs LLC
+Copyright (c) AttraQtor-Labs LLC
 
-This software is licensed for commercial use only.
+All rights reserved.
 
-Permission is hereby granted to licensed customers to use, copy, and execute
-this software solely for internal business purposes, subject to the terms of
-a separate commercial license agreement.
+This software is a **commercial deterministic computation engine**.
 
-NO PERMISSION IS GRANTED to:
-- redistribute the software
-- sublicense
-- offer as a hosted service
-- reverse engineer
-- modify for external distribution
+No permission is granted to:
+- Use
+- Copy
+- Modify
+- Distribute
+- Sublicense
+- Sell
 
-UNLICENSED USE IS STRICTLY PROHIBITED.
+this software or any derivative works **without an explicit written license**
+from AttraQtor-Labs LLC.
 
-For licensing inquiries:
-contact@attraqtorlabs.com
+This restriction applies regardless of:
+- Source availability
+- Fork status
+- Internal or external use
+
+For licensing inquiries, contact:
+legal@attraqtorlabs.com

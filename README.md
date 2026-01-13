@@ -33,3 +33,15 @@ Phase 2 guarantees:
 
 Phase 2 defines **interfaces and contracts only**.
 No heuristic, probabilistic, or adaptive behavior exists at this layer.
+
+---
+
+## License Notice
+
+Spectrum is **commercial software**.
+
+Use, distribution, or modification requires an explicit license from  
+**AttraQtor-Labs LLC**.
+
+See `LICENSE` and `docs/COMMERCIAL.md`.
+
