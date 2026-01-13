@@ -1,3 +1,11 @@
-Spectrum™ is proprietary software of AttraQtor-Labs LLC LLC.
+Spectrum — Deterministic Measurement Engine
+Copyright © 2026 AttraQtor-Labs LLC
 
-All algorithms, structures, and designs are protected intellectual property.
+This product is a deterministic, non-learning, replayable system.
+It intentionally excludes:
+- probabilistic methods
+- floating point approximation
+- adaptive learning
+- stochastic sampling
+
+All outputs are designed to be bit-identical and auditor-verifiable.
