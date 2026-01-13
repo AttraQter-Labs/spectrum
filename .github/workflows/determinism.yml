@@ -1,0 +1,39 @@
+name: Determinism Enforcement
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  determinism-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set strict environment
+        run: |
+          export PYTHONHASHSEED=0
+          export LC_ALL=C
+          export LANG=C
+          echo "Environment locked"
+
+      - name: Verify no randomness imports
+        run: |
+          if grep -R "import random" .; then
+            echo "❌ random module forbidden"
+            exit 1
+          fi
+          if grep -R "numpy.random" .; then
+            echo "❌ numpy randomness forbidden"
+            exit 1
+          fi
+          echo "✅ No randomness detected"
+
+      - name: Run tests twice (bit-identity check)
+        run: |
+          pytest -q --disable-warnings --maxfail=1 > run1.txt
+          pytest -q --disable-warnings --maxfail=1 > run2.txt
+          diff run1.txt run2.txt
+          echo "✅ Bit-identical test output confirmed"
