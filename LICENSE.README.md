@@ -5,7 +5,7 @@ Spectrum is **commercial proprietary software**.
 This repository is not open source.
 
 To obtain usage rights:
-- Contact AttraQter Labs
+- Contact AttraQtor-Labs LLC
 - Execute a commercial license agreement
 - Receive explicit authorization
 

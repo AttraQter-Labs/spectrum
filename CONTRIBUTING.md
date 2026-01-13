@@ -4,7 +4,7 @@ This repository is a commercial-grade deterministic computation engine.
 
 ## Contribution Policy
 - Contributions require explicit written authorization
-- All contributions are subject to IP assignment to AttraQter Labs LLC
+- All contributions are subject to IP assignment to AttraQtor-Labs LLC LLC
 - No anonymous or drive-by contributions accepted
 
 ## Prohibited
