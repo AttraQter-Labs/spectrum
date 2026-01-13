@@ -1,3 +1,6 @@
+
+**Owner:** AttraQtor-Labs LLC
+
 # Spectrum — Deterministic Measurement Infrastructure
 
 Commercial-grade deterministic measurement and audit engines.
