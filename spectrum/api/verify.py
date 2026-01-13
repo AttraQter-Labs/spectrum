@@ -3,19 +3,14 @@ Deterministic invariant verification.
 """
 
 from typing import Mapping
+from spectrum.invariants import check_invariants
 
 
 def verify(state: Mapping[str, object]) -> bool:
     """
-    Verify invariants on a measured state.
+    Verify all registered invariants.
 
-    Returns:
-    - True if all invariants hold
-    - False otherwise
-
-    MUST be deterministic.
+    Deterministic. Total.
     """
-    if not isinstance(state, Mapping):
-        raise TypeError("state must be a mapping")
-
-    return True
+    results = check_invariants(state)
+    return all(results.values())
