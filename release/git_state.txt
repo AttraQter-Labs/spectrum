@@ -1,0 +1,4 @@
+REPOSITORY: AttraQter-Labs/spectrum
+RELEASE: v1.0.0
+5807fb88fc2c07657121c5b9bc410f70256d9bab
+?? release/
