@@ -11,4 +11,18 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -e .
-      - run: pytest -q
+      - name: Run tests (first run)
+        run: |
+          pytest tests/test_determinism.py tests/test_replay_engine.py tests/test_boundary_determinism.py tests/test_invariant_determinism.py tests/test_irreversibility_determinism.py tests/test_numeric_stability.py tests/test_replay.py -v > test_run1.txt 2>&1
+          cat test_run1.txt
+      - name: Run tests (second run)
+        run: |
+          pytest tests/test_determinism.py tests/test_replay_engine.py tests/test_boundary_determinism.py tests/test_invariant_determinism.py tests/test_irreversibility_determinism.py tests/test_numeric_stability.py tests/test_replay.py -v > test_run2.txt 2>&1
+          cat test_run2.txt
+      - name: Verify bit-identical outputs
+        run: |
+          if ! diff test_run1.txt test_run2.txt; then
+            echo "ERROR: Test outputs differ between runs - determinism violated!"
+            exit 1
+          fi
+          echo "✓ Tests produce bit-identical outputs across runs"
