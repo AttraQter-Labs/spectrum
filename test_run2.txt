@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/runner/work/spectrum/spectrum
+collecting ... collected 15 items
+
+tests/test_determinism.py::test_bit_identical PASSED                     [  6%]
+tests/test_replay_engine.py::test_replay_identity PASSED                 [ 13%]
+tests/test_replay_engine.py::test_replay_hash_stability PASSED           [ 20%]
+tests/test_boundary_determinism.py::test_boundary_mapper_is_deterministic PASSED [ 26%]
+tests/test_invariant_determinism.py::test_invariant_miner_is_deterministic PASSED [ 33%]
+tests/test_irreversibility_determinism.py::test_irreversibility_detector_is_deterministic PASSED [ 40%]
+tests/test_numeric_stability.py::test_float_divergence PASSED            [ 46%]
+tests/test_numeric_stability.py::test_rational_exact PASSED              [ 53%]
+tests/test_numeric_stability.py::test_rational_bit_identical PASSED      [ 60%]
+tests/test_numeric_stability.py::test_rational_ordering_deterministic PASSED [ 66%]
+tests/test_replay.py::test_replay_deterministic_run PASSED               [ 73%]
+tests/test_replay.py::test_replay_trace_stability PASSED                 [ 80%]
+tests/test_replay.py::test_replay_hash_bit_identical PASSED              [ 86%]
+tests/test_replay.py::test_replay_ordering_canonical PASSED              [ 93%]
+tests/test_replay.py::test_replay_output_verification PASSED             [100%]
+
+============================== 15 passed in 0.05s ==============================
