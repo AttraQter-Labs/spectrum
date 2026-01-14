@@ -1,53 +1,36 @@
-# Spectrum  
+# Spectrum
+
 **Deterministic Measurement & Verification Infrastructure**
 
-Spectrum is a deterministic computation and measurement engine for systems where **exact reproducibility, auditability, and correctness** are mandatory.
+Spectrum is a deterministic computation and measurement engine designed for systems where:
 
----
+- Exact reproducibility is required
+- All behavior must be auditable
+- No learning, randomness, or approximation is permitted
 
 ## What Spectrum Is
 
-Spectrum is designed for environments where:
+- Deterministic by construction
+- Bit-identical for identical inputs
+- Replayable and traceable
+- Safe for regulated, scientific, and safety-critical domains
 
-- Identical inputs must produce identical outputs
-- All behavior must be explicit and traceable
-- No learning, randomness, heuristics, or approximation is permitted
-- Results must be defensible under audit or regulation
+## What Spectrum Is Not
 
-Spectrum does not infer, guess, adapt, or optimize.  
-Every transformation is deterministic, ordered, and replayable.
-
----
+- ❌ No machine learning
+- ❌ No probabilistic inference
+- ❌ No randomness or time-based behavior
+- ❌ No floating-point dependence
 
 ## Guarantees
 
-- Bit-identical outputs for identical inputs
-- No dependence on time, environment, or floating-point nondeterminism
-- Immutable execution semantics
-- Fully replayable and auditable transformations
-
----
-
-## Scope
-
-This repository defines the **commercial execution baseline**.
-
-All public interfaces, invariants, and execution semantics are considered **stable** as of `v1.0.0`.
-
----
-
-## Non-Goals
-
-- Machine learning
-- Probabilistic inference
-- Adaptive or heuristic behavior
-- Approximate computation
-
----
+- Identical inputs → identical outputs
+- No dependence on time, environment, or platform
+- Explicit transformations only
+- Full auditability
 
 ## Status
 
-**Frozen · Governed · Deterministic**
+**Stable. Frozen. Deterministic.**
 
-Owner: **AttraQtor-Labs LLC**  
-Baseline: **v1.0.0**
+See `GOVERNANCE.md` for change rules and invariants.
