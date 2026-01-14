@@ -1,0 +1,50 @@
+Spectrum Deterministic Replay Proof Certification
+==================================================
+
+Input Description:
+------------------
+A deterministic lattice computation with 8 nodes using exact rational arithmetic.
+The computation creates a directed acyclic graph (DAG) of lattice nodes with:
+- Root node (id=0) with state vector (0/1)
+- Multiple generations of nodes with rational state vectors
+- Merge points creating non-linear paths (nodes 3 and 7)
+- Final convergence at node 7 with state vector (29/128, 31/256)
+
+All arithmetic uses Python's Fraction type (exact rationals).
+No randomness, no time dependence, no floating point, no environment access.
+
+Exact Command Used:
+-------------------
+python3 proof/replay_proof.py
+
+Expected Output Hash (SHA-256):
+--------------------------------
+5c4da2cb8e62edf78099d32e46b1e214c48adfa2d8fdda758fa53b9d4c7cf31c
+
+Expected Trace Hash (SHA-256):
+-------------------------------
+5c4da2cb8e62edf78099d32e46b1e214c48adfa2d8fdda758fa53b9d4c7cf31c
+
+Certification Statement:
+------------------------
+Any deviation in OUTPUT_HASH or TRACE_HASH from the values above indicates
+either non-determinism in the implementation or an implementation error.
+
+The Spectrum engine guarantees bit-identical reproducibility.
+Running the proof script on any compliant Python 3.10+ installation MUST
+produce exactly these hash values.
+
+Verification Date: 2026-01-14
+Engine Version: 1.0.0+deterministic
+Python Requirement: 3.10+
+
+Third-Party Verification:
+--------------------------
+To verify this proof:
+1. Clone the repository
+2. Install: pip install -e .
+3. Run: python3 proof/replay_proof.py
+4. Compare OUTPUT_HASH and TRACE_HASH with values above
+5. Run again - hashes MUST be identical
+
+Any mismatch is a critical determinism violation.

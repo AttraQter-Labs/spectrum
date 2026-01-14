@@ -12,3 +12,39 @@ jobs:
           python-version: '3.12'
       - run: pip install -e .
       - run: pytest -q
+  
+  deterministic-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install package
+        run: pip install -e .
+      - name: Run proof first time
+        run: |
+          python3 proof/replay_proof.py > proof_run1.log
+          grep "^OUTPUT_HASH:" proof_run1.log | cut -d' ' -f2 > hash1.txt
+          echo "First run hash:"
+          cat hash1.txt
+      - name: Run proof second time
+        run: |
+          python3 proof/replay_proof.py > proof_run2.log
+          grep "^OUTPUT_HASH:" proof_run2.log | cut -d' ' -f2 > hash2.txt
+          echo "Second run hash:"
+          cat hash2.txt
+      - name: Verify hash equality
+        run: |
+          HASH1=$(cat hash1.txt | tr -d '\n')
+          HASH2=$(cat hash2.txt | tr -d '\n')
+          echo "Comparing hashes..."
+          echo "Run 1: $HASH1"
+          echo "Run 2: $HASH2"
+          if [ "$HASH1" = "$HASH2" ]; then
+            echo "✓ SUCCESS: Hashes are identical - determinism verified"
+            exit 0
+          else
+            echo "✗ FAILURE: Hashes differ - determinism violation detected!"
+            exit 1
+          fi
