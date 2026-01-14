@@ -8,3 +8,9 @@ dist/
 build/
 .eggs/
 *.egg-info/
+outputs/
+artifacts/
+cache/
+tmp/
+.pytest_cache/
+*.log
