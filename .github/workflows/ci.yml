@@ -11,4 +11,11 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -e .
-      - run: pytest -q
+      - name: Run pytest first time
+        run: pytest -q > run1.txt
+      - name: Run pytest second time
+        run: pytest -q > run2.txt
+      - name: Verify bit-identical outputs
+        run: |
+          diff run1.txt run2.txt
+          echo "✅ Tests are deterministic - outputs identical"
