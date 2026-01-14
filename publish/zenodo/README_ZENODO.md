@@ -33,7 +33,7 @@ Spectrum is a deterministic, non-learning measurement infrastructure designed fo
    sha256sum -c release/file_hashes.sha256
    ```
    
-   This verifies that core source files match the release manifest (some files like README.md may differ between versions).
+   This verifies that source files match the published release checksums. The release manifest (`release/RELEASE_MANIFEST.json`) describes the artifact structure, while `file_hashes.sha256` provides file-by-file verification. Note: Documentation files may be updated between releases without affecting core deterministic behavior.
 
 4. **Run all determinism validation tests:**
    ```bash
@@ -85,7 +85,7 @@ To cite this artifact in publications, please use:
 
 ## Additional Information
 
-- **Repository:** https://github.com/AttraQter-Labs/spectrum
+- **Repository:** https://github.com/AttraQtor-Labs/spectrum
 - **Documentation:** See `README.md` and `VERIFICATION.md` in the repository root
 - **Release Manifest:** `release/RELEASE_MANIFEST.json`
 - **Determinism Contract:** `INTERFACE.md` and `contracts/CONTRACT.md`
