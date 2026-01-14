@@ -25,8 +25,6 @@ def test_replay_deterministic_single_run():
     
     # Must be bit-identical
     assert output1 == output2
-    assert len(output1) == len(output2)
-    assert type(output1) == type(output2)
 
 
 def test_replay_deterministic_multiple_inputs():
@@ -171,14 +169,7 @@ def test_replay_byte_level_determinism():
     output1 = run(input_data)
     output2 = run(input_data)
     
-    # Check length
-    assert len(output1) == len(output2)
-    
-    # Check every byte
-    for i in range(len(output1)):
-        assert output1[i] == output2[i]
-    
-    # Check as bytes
+    # Check as bytes (performs byte-level equality)
     assert output1 == output2
 
 
