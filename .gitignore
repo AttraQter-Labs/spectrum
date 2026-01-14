@@ -13,3 +13,4 @@ artifacts/
 cache/
 tmp/
 .pytest_cache/
+test_run*.txt
