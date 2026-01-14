@@ -1,23 +1,33 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+<<<<<<< HEAD
+requires = ["setuptools>=61.0"]
+=======
+requires = ["setuptools>=45", "wheel"]
+>>>>>>> 83f54fc (Fix replay module structure and add pyproject.toml)
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "spectrum"
-version = "0.1.0"
-description = "Deterministic, replayable measurement and verification framework"
+<<<<<<< HEAD
+version = "0.0.0"
+description = "Spectrum"
 readme = "README.md"
-requires-python = ">=3.9"
-license = { text = "Apache-2.0" }
-authors = [{ name = "AttraQter-Labs LLC" }]
+requires-python = ">=3.8"
+=======
+version = "0.1.0"
+description = "Deterministic measurement infrastructure"
+authors = [
+    {name = "AttraQtor-Labs LLC"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.12"
 dependencies = []
 
 [project.optional-dependencies]
-test = ["pytest>=7.0"]
+dev = [
+    "pytest>=7.0.0",
+]
 
 [tool.setuptools]
 packages = ["spectrum"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-q"
+>>>>>>> 83f54fc (Fix replay module structure and add pyproject.toml)
