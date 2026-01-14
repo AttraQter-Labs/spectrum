@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectrum"
+version = "0.1.0"
+description = "Deterministic measurement infrastructure"
+authors = [
+    {name = "AttraQtor-Labs LLC"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[tool.setuptools]
+packages = ["spectrum"]
