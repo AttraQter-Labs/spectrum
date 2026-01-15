@@ -26,8 +26,13 @@ jobs:
           if grep -R "import random" . \
             --exclude-dir=.git \
             --exclude-dir=.github \
+<<<<<<< HEAD
             --exclude-dir=.venv \
             --exclude-dir=venv; then
+=======
+            --exclude-dir=venv \
+            --exclude-dir=.venv; then
+>>>>>>> 9871efa (Fix determinism check: exclude workflow self-match)
             echo "❌ random module forbidden"
             exit 1
           fi
@@ -35,8 +40,13 @@ jobs:
           if grep -R "numpy.random" . \
             --exclude-dir=.git \
             --exclude-dir=.github \
+<<<<<<< HEAD
             --exclude-dir=.venv \
             --exclude-dir=venv; then
+=======
+            --exclude-dir=venv \
+            --exclude-dir=.venv; then
+>>>>>>> 9871efa (Fix determinism check: exclude workflow self-match)
             echo "❌ numpy randomness forbidden"
             exit 1
           fi
