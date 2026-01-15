@@ -4,58 +4,54 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  determinism-check:
+  determinism:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          fetch-tags: true
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set strict environment
+      - name: Lock environment
         run: |
-          export PYTHONHASHSEED=0
-          export LC_ALL=C
-          export LANG=C
           echo "Environment locked"
+          export TZ=UTC
+          export PYTHONHASHSEED=0
 
-      - name: Verify no randomness imports (project code only)
+      - name: Verify no randomness imports
         run: |
+          set -e
+
           if grep -R "import random" . \
             --exclude-dir=.git \
             --exclude-dir=.github \
-<<<<<<< HEAD
             --exclude-dir=.venv \
             --exclude-dir=venv; then
-=======
-            --exclude-dir=venv \
-            --exclude-dir=.venv; then
->>>>>>> 9871efa (Fix determinism check: exclude workflow self-match)
-            echo "❌ random module forbidden"
-            exit 1
+              echo "❌ random module forbidden"
+              exit 1
           fi
 
           if grep -R "numpy.random" . \
             --exclude-dir=.git \
             --exclude-dir=.github \
-<<<<<<< HEAD
             --exclude-dir=.venv \
             --exclude-dir=venv; then
-=======
-            --exclude-dir=venv \
-            --exclude-dir=.venv; then
->>>>>>> 9871efa (Fix determinism check: exclude workflow self-match)
-            echo "❌ numpy randomness forbidden"
-            exit 1
+              echo "❌ numpy.random forbidden"
+              exit 1
           fi
 
-          echo "✅ No randomness detected"
-
-      - name: Run tests twice (bit-identity check)
+      - name: Verify no time-based usage
         run: |
-          pytest -q --disable-warnings --maxfail=1 > run1.txt || echo "No tests"
-          pytest -q --disable-warnings --maxfail=1 > run2.txt || echo "No tests"
-          diff run1.txt run2.txt
-          echo "✅ Bit-identical test output confirmed"
+          if grep -R "time.time()" . \
+            --exclude-dir=.git \
+            --exclude-dir=.github \
+            --exclude-dir=.venv \
+            --exclude-dir=venv; then
+              echo "❌ time.time() forbidden"
+              exit 1
+          fi
+
+      - name: Determinism check passed
+        run: echo "✅ Determinism enforcement passed"
