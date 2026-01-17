@@ -1,40 +1,25 @@
 [build-system]
-<<<<<<< HEAD
 requires = ["setuptools>=61.0"]
-=======
-requires = ["setuptools>=45", "wheel"]
->>>>>>> 83f54fc (Fix replay module structure and add pyproject.toml)
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "spectrum"
-<<<<<<< HEAD
-version = "0.0.0"
-description = "Spectrum"
-readme = "README.md"
-requires-python = ">=3.8"
-=======
 version = "0.1.0"
-description = "Deterministic measurement infrastructure"
+description = "Deterministic, replayable measurement and verification framework"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
 authors = [
-    {name = "AttraQtor-Labs LLC"}
+  { name = "AttraQter-Labs LLC" }
 ]
-license = {text = "MIT"}
-requires-python = ">=3.12"
+
 dependencies = []
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
+test = [
+  "pytest>=7.0"
 ]
 
-[tool.setuptools]
-packages = ["spectrum"]
-<<<<<<< HEAD
->>>>>>> 83f54fc (Fix replay module structure and add pyproject.toml)
-=======
-
 [tool.pytest.ini_options]
-# Skip tests with pre-existing import errors
-addopts = "--ignore=tests/test_invariant_composition.py --ignore=tests/test_invariant_mining.py --ignore=tests/test_invariants.py --ignore=tests/test_irreversibility.py --ignore=tests/test_lattice_determinism.py"
->>>>>>> 7ef22b2 (Add pytest config to skip broken tests)
+testpaths = ["tests"]
+addopts = "-q"
