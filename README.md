@@ -1,36 +1,74 @@
 # Spectrum
 
-**Deterministic Measurement & Verification Infrastructure**
+[![CI](https://github.com/AttraQter-Labs/spectrum/actions/workflows/ci.yml/badge.svg)](https://github.com/AttraQter-Labs/spectrum/actions/workflows/ci.yml)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/11784/badge)](https://www.bestpractices.dev/projects/11784)
 
-Spectrum is a deterministic computation and measurement engine designed for systems where:
+## Overview
 
-- Exact reproducibility is required
-- All behavior must be auditable
-- No learning, randomness, or approximation is permitted
+**Spectrum** is a deterministic, reproducible verification framework designed for
+numerical stability, replay validation, and integrity checking of computational systems.
 
-## What Spectrum Is
+The project prioritizes:
+- Deterministic execution
+- Replayable verification
+- Transparent, auditable CI
+- Supply-chain security alignment (OpenSSF)
 
-- Deterministic by construction
-- Bit-identical for identical inputs
-- Replayable and traceable
-- Safe for regulated, scientific, and safety-critical domains
+---
 
-## What Spectrum Is Not
+## Determinism & Reproducibility
 
-- ❌ No machine learning
-- ❌ No probabilistic inference
-- ❌ No randomness or time-based behavior
-- ❌ No floating-point dependence
+Spectrum enforces determinism through:
+- Fixed Python hash seeds
+- Explicit replay modules
+- Controlled numerical tolerance testing
+- No network dependency during test execution
 
-## Guarantees
+Every CI run is designed to be **bitwise-repeatable** under identical inputs.
 
-- Identical inputs → identical outputs
-- No dependence on time, environment, or platform
-- Explicit transformations only
-- Full auditability
+---
 
-## Status
+## Verification Modules
 
-**Stable. Frozen. Deterministic.**
+### Replay Engine
+Ensures prior computational traces can be replayed and validated deterministically.
 
-See `GOVERNANCE.md` for change rules and invariants.
+### Numerical Stability
+Detects nondeterministic floating-point drift across runs and platforms.
+
+---
+
+## Continuous Integration
+
+All changes are validated via GitHub Actions:
+- Clean environment
+- Deterministic configuration
+- Replay and verification checks
+- Required passing status checks before merge
+
+---
+
+## Security & Best Practices
+
+This project aligns with:
+- OpenSSF Best Practices
+- Principle of least privilege CI permissions
+- Reproducible builds philosophy
+
+OpenSSF Project Page:
+
+https://www.bestpractices.dev/projects/11784
+
+---
+
+## Licensing
+
+Apache License 2.0
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+---
+
+## Archival & Citation
+
+Releases are designed to be Zenodo-ready for DOI archival once versioned releases are published.
