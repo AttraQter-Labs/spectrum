@@ -1,28 +1,52 @@
-name: Spectrum CI
+name: CI
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   test:
+    name: Deterministic Test Suite
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.11'
 
-      - name: Install tooling
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install -e .[dev]
 
-      - name: Install package (if present)
+      - name: Verify deterministic environment
         run: |
-          pip install -e . || echo "No package install needed"
+          python - << 'EOF'
+          import sys, hashlib
+          data = b"determinism-check"
+          print(hashlib.sha256(data).hexdigest())
+          print(sys.version)
+          EOF
 
-      - name: Run tests if any exist
+      - name: Run tests (deterministic, no network)
+        env:
+          PYTHONHASHSEED: "0"
         run: |
-          pytest -q || echo "No tests collected; passing CI"
+          pytest -q --disable-warnings --maxfail=1
+
+      - name: Replay verification
+        run: |
+          python -m spectrum.replay
+
+      - name: Numerical stability verification
+        run: |
+          python -m spectrum.verify
