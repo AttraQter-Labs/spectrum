@@ -16,3 +16,4 @@ def entropy_shift(before: np.ndarray, after: np.ndarray) -> float:
 def is_irreversible(before: np.ndarray, after: np.ndarray, threshold: float = 0.01) -> bool:
     """True if entropy increases by more than the given threshold."""
     return entropy_shift(before, after) > threshold
+    
