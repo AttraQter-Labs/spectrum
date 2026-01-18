@@ -14,3 +14,4 @@ cache/
 tmp/
 .pytest_cache/
 *.log
+run*.txt
