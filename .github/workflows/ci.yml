@@ -48,6 +48,7 @@ jobs:
         run: |
 <<<<<<< HEAD
           pytest -q --disable-warnings --maxfail=1
+      pytest -q tests/test_irreversibility.py
 
       - name: Replay verification
         run: |
@@ -58,13 +59,18 @@ jobs:
           python -m spectrum.verify
 =======
           pytest -q || echo "No tests collected; passing CI"
+      pytest -q tests/test_irreversibility.py
 =======
           python-version: '3.12'
       - run: pip install -e .
       - name: Run pytest first time
+      pytest -q tests/test_irreversibility.py
         run: pytest -q > run1.txt
+      pytest -q tests/test_irreversibility.py
       - name: Run pytest second time
+      pytest -q tests/test_irreversibility.py
         run: pytest -q > run2.txt
+      pytest -q tests/test_irreversibility.py
       - name: Verify bit-identical outputs
         run: |
           diff run1.txt run2.txt
