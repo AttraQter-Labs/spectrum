@@ -1,4 +1,3 @@
-cat > pyproject.toml <<'EOF'
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
@@ -6,17 +5,25 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spectrum"
 version = "0.1.0"
-description = "Deterministic replayable computation core"
+description = "Deterministic, replayable measurement and verification framework"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
 authors = [
-  { name = "AttraQtor-Labs LLC" }
+  { name = "AttraQter-Labs LLC" }
 ]
 
 dependencies = []
 
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0"
+]
+
+[tool.setuptools.packages.find]
+include = ["spectrum*"]
+exclude = ["release*", "contracts*", "interfaces*"]
+
 [tool.pytest.ini_options]
-addopts = "-q"
 testpaths = ["tests"]
-EOF
+addopts = "-q"
