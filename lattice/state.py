@@ -1,13 +1,14 @@
+mkdir -p spectrum/lattice
+cat > spectrum/lattice/state.py <<'PY'
+"""
+Basic lattice state stub for testing.
+"""
+
+from dataclasses import dataclass
+from typing import Any
+
+@dataclass(frozen=True)
 class LatticeState:
-    """Deterministic lattice state (MVP stub).
-
-    Placeholder for future lattice modeling.  Exists only
-    to satisfy public API and test imports.
-    """
-
-    def __init__(self, *args, **kwargs):
-        self.args = args
-        self.kwargs = kwargs
-
-    def __repr__(self):
-        return f"<LatticeState args={self.args} kwargs={self.kwargs}>"
+    """Placeholder for lattice state representation."""
+    value: Any
+PY
