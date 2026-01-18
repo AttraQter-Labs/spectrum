@@ -41,3 +41,15 @@ def check_invariants(state: Mapping[str, object]) -> Dict[str, bool]:
     for name, inv in INVARIANTS.items():
         results[name] = bool(inv(state))
     return results
+
+
+def unique_node_ids(nodes) -> bool:
+    """
+    Invariant: all lattice nodes have unique IDs.
+    """
+    seen = set()
+    for n in nodes:
+        if n.id in seen:
+            return False
+        seen.add(n.id)
+    return True
