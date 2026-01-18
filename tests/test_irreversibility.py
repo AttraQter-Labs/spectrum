@@ -1,6 +1,6 @@
 from fractions import Fraction
 from spectrum.lattice.node import LatticeNode
-from spectrum.causality.irreversible import find_irreversible
+from spectrum.irreversibility.detect import find_irreversible
 
 
 def test_irreversible_transition_detected():
