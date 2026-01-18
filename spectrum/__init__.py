@@ -1,6 +1,2 @@
-"""
-Spectrum Engine (internal).
-
-DO NOT import from here directly.
-Use spectrum.api instead.
-"""
+"""Main package entry for Spectrum deterministic framework."""
+__all__ = ["irreversibility"]
