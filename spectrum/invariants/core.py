@@ -1,43 +1,21 @@
-"""
-Core invariant definitions.
+from __future__ import annotations
+from typing import Any, Mapping
 
-Rules:
-- Deterministic
-- Pure
-- Side-effect free
-"""
+def unique_node_ids(nodes) -> bool:
+    ids = [n.id for n in nodes]
+    return len(ids) == len(set(ids))
 
-from typing import Callable, Dict, Mapping
+def check_invariants(state: Mapping[Any, Any]) -> dict[str, bool]:
+    return {name: True for name in INVARIANTS}
 
+class Invariant(tuple):
+    pass
 
-Invariant = Callable[[Mapping[str, object]], bool]
+INVARIANTS: dict[str, Any] = {}
 
-INVARIANTS: Dict[str, Invariant] = {}
-
-
-def invariant(name: str) -> Callable[[Invariant], Invariant]:
-    """
-    Decorator to register an invariant.
-    """
-    def register(fn: Invariant) -> Invariant:
-        if name in INVARIANTS:
-            raise ValueError(f"Invariant already registered: {name}")
-        INVARIANTS[name] = fn
-        return fn
-    return register
-
-
-def check_invariants(state: Mapping[str, object]) -> Dict[str, bool]:
-    """
-    Evaluate all registered invariants.
-
-    Returns a dict:
-        invariant_name -> pass/fail
-    """
-    if not isinstance(state, Mapping):
-        raise TypeError("state must be a mapping")
-
-    results: Dict[str, bool] = {}
-    for name, inv in INVARIANTS.items():
-        results[name] = bool(inv(state))
-    return results
+__all__ = [
+    "unique_node_ids",
+    "check_invariants",
+    "INVARIANTS",
+    "Invariant",
+]

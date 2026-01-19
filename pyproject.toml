@@ -21,10 +21,3 @@ packages = ["spectrum"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
-=======
-
-[tool.pytest.ini_options]
-# Skip tests with pre-existing import errors
-addopts = "--ignore=tests/test_invariant_composition.py --ignore=tests/test_invariant_mining.py --ignore=tests/test_invariants.py --ignore=tests/test_irreversibility.py --ignore=tests/test_lattice_determinism.py"
->>>>>>> 7ef22b2 (Add pytest config to skip broken tests)
->>>>>>> 99f83ae (Add pytest config to skip broken tests)

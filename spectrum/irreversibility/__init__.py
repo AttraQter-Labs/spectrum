@@ -10,7 +10,7 @@ def entropy_shift(before: np.ndarray, after: np.ndarray) -> float:
     before_p = before / before.sum()
     after_p = after / after.sum()
     h_before = -(before_p * np.log2(before_p + 1e-12)).sum()
-    h_after  = -(after_p  * np.log2(after_p  + 1e-12)).sum()
+    h_after  = -(after_p  * np.log2(after_p + 1e-12)).sum()
     return h_after - h_before
 
 def is_irreversible(before: np.ndarray, after: np.ndarray, threshold: float = 0.01) -> bool:
