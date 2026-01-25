@@ -1,57 +1,33 @@
-name: Determinism Enforcement
+name: Determinism
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   determinism:
     runs-on: ubuntu-latest
-
+    env:
+      PYTHONHASHSEED: "0"
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Lock environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
         run: |
-          echo "Environment locked"
-          export TZ=UTC
-          export PYTHONHASHSEED=0
+          python -m pip install --upgrade pip
+          pip install -e .[test]
 
-      - name: Verify no randomness imports
+      - name: Grep forbidden nondeterminism
         run: |
-          set -e
+          ! grep -R "random\|numpy.random\|time.time\|datetime.now\|uuid\|secrets\|os.environ" spectrum tests
 
-          if grep -R "import random" . \
-            --exclude-dir=.git \
-            --exclude-dir=.github \
-            --exclude-dir=.venv \
-            --exclude-dir=venv; then
-              echo "❌ random module forbidden"
-              exit 1
-          fi
-
-          if grep -R "numpy.random" . \
-            --exclude-dir=.git \
-            --exclude-dir=.github \
-            --exclude-dir=.venv \
-            --exclude-dir=venv; then
-              echo "❌ numpy.random forbidden"
-              exit 1
-          fi
-
-      - name: Verify no time-based usage
+      - name: Deterministic test replay
         run: |
-          if grep -R "time.time()" . \
-            --exclude-dir=.git \
-            --exclude-dir=.github \
-            --exclude-dir=.venv \
-            --exclude-dir=venv; then
-              echo "❌ time.time() forbidden"
-              exit 1
-          fi
-
-      - name: Determinism check passed
-        run: echo "✅ Determinism enforcement passed"
+          pytest -q | tee run1.txt
+          pytest -q | tee run2.txt
+          diff -u run1.txt run2.txt
