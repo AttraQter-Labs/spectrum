@@ -1,0 +1,218 @@
+./invariants/core.py -> from __future__ import annotations
+./invariants/core.py -> from dataclasses import dataclass
+./invariants/core.py -> from typing import Any, Iterable, Iterator, Mapping, Sequence, Set
+./lattice/state.py -> from dataclasses import dataclass
+./lattice/state.py -> from typing import Any
+./spectrum/api.py -> from spectrum.metrics.fairness import demographic_parity
+./spectrum/api/__init__.py -> from spectrum.api.measure import measure
+./spectrum/api/__init__.py -> from spectrum.api.verify import verify
+./spectrum/api/contracted_execute.py -> from spectrum.contracts import Contract, enforce_contract
+./spectrum/api/contracted_execute.py -> from spectrum.invariants import check_invariants
+./spectrum/api/contracted_execute.py -> from spectrum.logging import record_execution
+./spectrum/api/contracted_execute.py -> from typing import Mapping, Any, Callable
+./spectrum/api/engine_execute.py -> from spectrum.api.contracted_execute import execute_with_contract
+./spectrum/api/engine_execute.py -> from spectrum.contracts import Contract
+./spectrum/api/engine_execute.py -> from spectrum.engines import get_engine_spec
+./spectrum/api/engine_execute.py -> from typing import Mapping, Any, Callable
+./spectrum/api/execute.py -> from spectrum.api.verify import verify
+./spectrum/api/execute.py -> from spectrum.invariants import check_invariants
+./spectrum/api/execute.py -> from spectrum.logging import record_execution
+./spectrum/api/execute.py -> from typing import Mapping, Any
+./spectrum/api/measure.py -> from typing import Any, Mapping
+./spectrum/api/verify.py -> from spectrum.invariants import check_invariants
+./spectrum/api/verify.py -> from typing import Mapping
+./spectrum/boundary/checks.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/boundary/checks.py -> from typing import Iterable
+./spectrum/boundary/map.py -> from dataclasses import dataclass
+./spectrum/boundary/map.py -> from enum import Enum
+./spectrum/boundary/map.py -> from fractions import Fraction
+./spectrum/boundary/map.py -> from typing import Iterable, Tuple
+./spectrum/contracts/__init__.py -> from spectrum.contracts.core import (
+./spectrum/contracts/core.py -> from dataclasses import dataclass
+./spectrum/contracts/core.py -> from typing import Callable, Mapping, Any, Tuple
+./spectrum/engines/__init__.py -> from spectrum.engines.registry import (
+./spectrum/engines/examples.py -> from spectrum.engines.registry import register_engine
+./spectrum/engines/registry.py -> from dataclasses import dataclass
+./spectrum/engines/registry.py -> from typing import Dict
+./spectrum/engines/registry.py -> import hashlib
+./spectrum/engines/registry.py -> import inspect
+./spectrum/expand/rules.py -> from fractions import Fraction
+./spectrum/expand/rules.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/expand/rules.py -> from typing import Iterable, Tuple
+./spectrum/expansion/rules.py -> from fractions import Fraction
+./spectrum/expansion/rules.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/expansion/rules.py -> from typing import Iterable, Tuple
+./spectrum/invariant/mine.py -> from __future__ import annotations
+./spectrum/invariant/mine.py -> from fractions import Fraction
+./spectrum/invariant/mine.py -> from spectrum.invariants.core import Invariant
+./spectrum/invariant/mine.py -> from typing import Iterable, Set, Tuple
+./spectrum/invariants/__init__.py -> from spectrum.invariants.core import (
+./spectrum/invariants/baseline.py -> from spectrum.invariants.core import invariant
+./spectrum/invariants/compose.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/invariants/compose.py -> from typing import Iterable, Callable
+./spectrum/invariants/core.py -> from __future__ import annotations
+./spectrum/invariants/core.py -> from typing import Any, Mapping
+./spectrum/invariants/global_invariants.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/invariants/global_invariants.py -> from typing import Iterable
+./spectrum/invariants/mine.py -> from dataclasses import dataclass
+./spectrum/invariants/mine.py -> from fractions import Fraction
+./spectrum/invariants/mine.py -> from typing import Iterable, Tuple
+./spectrum/invariants/proof.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/invariants/proof.py -> from typing import Iterable, Callable, Dict
+./spectrum/irreversibility/__init__.py -> from __future__ import annotations
+./spectrum/irreversibility/__init__.py -> import numpy as np
+./spectrum/irreversibility/detect.py -> from . import entropy_shift, is_irreversible
+./spectrum/irreversibility/detect.py -> from dataclasses import dataclass
+./spectrum/irreversibility/detect.py -> from fractions import Fraction
+./spectrum/irreversibility/detect.py -> from typing import Iterable, Tuple
+./spectrum/lattice/expand.py -> from .state import LatticeState
+./spectrum/lattice/expand.py -> from typing import Iterable
+./spectrum/lattice/node.py -> from dataclasses import dataclass
+./spectrum/lattice/node.py -> from typing import Tuple, Set, Optional
+./spectrum/lattice/state.py -> from dataclasses import dataclass
+./spectrum/lattice/state.py -> from typing import Any
+./spectrum/logging/__init__.py -> from spectrum.logging.core import (
+./spectrum/logging/core.py -> from dataclasses import dataclass, asdict
+./spectrum/logging/core.py -> from typing import Mapping, Any, Dict
+./spectrum/logging/core.py -> import hashlib
+./spectrum/logging/core.py -> import json
+./spectrum/metrics/fairness.py -> from collections import defaultdict
+./spectrum/metrics/fairness.py -> from fractions import Fraction
+./spectrum/rational/core.py -> from fractions import Fraction
+./spectrum/replay/__init__.py -> import hashlib
+./spectrum/replay/replay.py -> from fractions import Fraction
+./spectrum/replay/replay.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/replay/replay.py -> from typing import Iterable, Tuple
+./spectrum/serialization/canonical.py -> from fractions import Fraction
+./spectrum/serialization/canonical.py -> from spectrum.lattice.node import LatticeNode
+./spectrum/serialization/canonical.py -> from typing import Iterable, Tuple
+./spectrum/serialization/canonical.py -> import hashlib
+./spectrum/verify.py -> from spectrum.replay import run
+./src/spectrum/api.py -> from spectrum.metrics.fairness import demographic_parity
+./src/spectrum/api/__init__.py -> from spectrum.api.measure import measure
+./src/spectrum/api/__init__.py -> from spectrum.api.verify import verify
+./src/spectrum/api/contracted_execute.py -> from spectrum.contracts import Contract, enforce_contract
+./src/spectrum/api/contracted_execute.py -> from spectrum.invariants import check_invariants
+./src/spectrum/api/contracted_execute.py -> from spectrum.logging import record_execution
+./src/spectrum/api/contracted_execute.py -> from typing import Mapping, Any, Callable
+./src/spectrum/api/engine_execute.py -> from spectrum.api.contracted_execute import execute_with_contract
+./src/spectrum/api/engine_execute.py -> from spectrum.contracts import Contract
+./src/spectrum/api/engine_execute.py -> from spectrum.engines import get_engine_spec
+./src/spectrum/api/engine_execute.py -> from typing import Mapping, Any, Callable
+./src/spectrum/api/execute.py -> from spectrum.api.verify import verify
+./src/spectrum/api/execute.py -> from spectrum.invariants import check_invariants
+./src/spectrum/api/execute.py -> from spectrum.logging import record_execution
+./src/spectrum/api/execute.py -> from typing import Mapping, Any
+./src/spectrum/api/measure.py -> from typing import Any, Mapping
+./src/spectrum/api/verify.py -> from spectrum.invariants import check_invariants
+./src/spectrum/api/verify.py -> from typing import Mapping
+./src/spectrum/boundary/checks.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/boundary/checks.py -> from typing import Iterable
+./src/spectrum/boundary/map.py -> from dataclasses import dataclass
+./src/spectrum/boundary/map.py -> from enum import Enum
+./src/spectrum/boundary/map.py -> from fractions import Fraction
+./src/spectrum/boundary/map.py -> from typing import Iterable, Tuple
+./src/spectrum/contracts/__init__.py -> from spectrum.contracts.core import (
+./src/spectrum/contracts/core.py -> from dataclasses import dataclass
+./src/spectrum/contracts/core.py -> from typing import Callable, Mapping, Any, Tuple
+./src/spectrum/engines/__init__.py -> from spectrum.engines.registry import (
+./src/spectrum/engines/examples.py -> from spectrum.engines.registry import register_engine
+./src/spectrum/engines/registry.py -> from dataclasses import dataclass
+./src/spectrum/engines/registry.py -> from typing import Dict
+./src/spectrum/engines/registry.py -> import hashlib
+./src/spectrum/engines/registry.py -> import inspect
+./src/spectrum/expand/rules.py -> from fractions import Fraction
+./src/spectrum/expand/rules.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/expand/rules.py -> from typing import Iterable, Tuple
+./src/spectrum/expansion/rules.py -> from fractions import Fraction
+./src/spectrum/expansion/rules.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/expansion/rules.py -> from typing import Iterable, Tuple
+./src/spectrum/invariant/mine.py -> from typing import Iterable, Tuple
+./src/spectrum/invariants/__init__.py -> from spectrum.invariants.core import (
+./src/spectrum/invariants/baseline.py -> from spectrum.invariants.core import invariant
+./src/spectrum/invariants/compose.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/invariants/compose.py -> from typing import Iterable, Callable
+./src/spectrum/invariants/core.py -> from typing import Callable, Dict, Mapping
+./src/spectrum/invariants/global_invariants.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/invariants/global_invariants.py -> from typing import Iterable
+./src/spectrum/invariants/mine.py -> from dataclasses import dataclass
+./src/spectrum/invariants/mine.py -> from fractions import Fraction
+./src/spectrum/invariants/mine.py -> from typing import Iterable, Tuple
+./src/spectrum/invariants/proof.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/invariants/proof.py -> from typing import Iterable, Callable, Dict
+./src/spectrum/irreversibility/detect.py -> from dataclasses import dataclass
+./src/spectrum/irreversibility/detect.py -> from typing import Iterable, Set, Tuple, Union
+./src/spectrum/lattice/expand.py -> from typing import Iterable
+./src/spectrum/lattice/node.py -> from dataclasses import dataclass
+./src/spectrum/lattice/node.py -> from typing import Tuple, Set, Optional
+./src/spectrum/logging/__init__.py -> from spectrum.logging.core import (
+./src/spectrum/logging/core.py -> from dataclasses import dataclass, asdict
+./src/spectrum/logging/core.py -> from typing import Mapping, Any, Dict
+./src/spectrum/logging/core.py -> import hashlib
+./src/spectrum/logging/core.py -> import json
+./src/spectrum/metrics/fairness.py -> from collections import defaultdict
+./src/spectrum/metrics/fairness.py -> from fractions import Fraction
+./src/spectrum/rational/core.py -> from fractions import Fraction
+./src/spectrum/replay/__init__.py -> import hashlib
+./src/spectrum/replay/replay.py -> from fractions import Fraction
+./src/spectrum/replay/replay.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/replay/replay.py -> from typing import Iterable, Tuple
+./src/spectrum/serialization/canonical.py -> from fractions import Fraction
+./src/spectrum/serialization/canonical.py -> from spectrum.lattice.node import LatticeNode
+./src/spectrum/serialization/canonical.py -> from typing import Iterable, Tuple
+./src/spectrum/serialization/canonical.py -> import hashlib
+./src/spectrum/verify.py -> from spectrum.replay import run
+./tests/test_boundary_determinism.py -> from fractions import Fraction
+./tests/test_boundary_determinism.py -> from spectrum.boundary.map import map_boundaries
+./tests/test_canonical_serialization.py -> from fractions import Fraction
+./tests/test_canonical_serialization.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_canonical_serialization.py -> from spectrum.serialization.canonical import (
+./tests/test_contracts.py -> from spectrum.api.contracted_execute import execute_with_contract
+./tests/test_contracts.py -> from spectrum.contracts import Contract
+./tests/test_determinism.py -> from spectrum.metrics.fairness import demographic_parity
+./tests/test_engine_registry.py -> from spectrum.api.engine_execute import execute_engine
+./tests/test_engine_registry.py -> from spectrum.contracts import Contract
+./tests/test_engine_registry.py -> from spectrum.engines.examples import add_one_engine
+./tests/test_execution_log.py -> from spectrum.api.execute import execute
+./tests/test_expand_rules.py -> from fractions import Fraction
+./tests/test_expand_rules.py -> from spectrum.expand.rules import expand_deterministically
+./tests/test_expand_rules.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_expand_rules.py -> from spectrum.serialization.canonical import hash_nodes
+./tests/test_expansion_rules.py -> from fractions import Fraction
+./tests/test_expansion_rules.py -> from spectrum.expansion.rules import expand_node, expand_layer
+./tests/test_expansion_rules.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_global_invariants.py -> from fractions import Fraction
+./tests/test_global_invariants.py -> from spectrum.invariants.global_invariants import (
+./tests/test_global_invariants.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_invariant_composition.py -> from fractions import Fraction
+./tests/test_invariant_composition.py -> from spectrum.boundary.checks import no_orphan_nodes
+./tests/test_invariant_composition.py -> from spectrum.invariants.compose import all_invariants_hold
+./tests/test_invariant_composition.py -> from spectrum.invariants.core import unique_node_ids
+./tests/test_invariant_composition.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_invariant_determinism.py -> from fractions import Fraction
+./tests/test_invariant_determinism.py -> from spectrum.invariants.mine import mine
+./tests/test_invariant_mining.py -> from fractions import Fraction
+./tests/test_invariant_mining.py -> from spectrum.invariant.mine import mine
+./tests/test_invariants.py -> from fractions import Fraction
+./tests/test_invariants.py -> from spectrum.boundary.checks import no_orphan_nodes
+./tests/test_invariants.py -> from spectrum.invariants.core import unique_node_ids
+./tests/test_invariants.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_irreversibility.py -> from fractions import Fraction
+./tests/test_irreversibility.py -> from spectrum.irreversibility import entropy_shift, is_irreversible
+./tests/test_irreversibility.py -> from spectrum.irreversibility.detect import Transition, find_irreversible
+./tests/test_irreversibility.py -> import numpy as np
+./tests/test_irreversibility_determinism.py -> from fractions import Fraction
+./tests/test_irreversibility_determinism.py -> from spectrum.irreversibility.detect import Transition, find_irreversible
+./tests/test_lattice_determinism.py -> from fractions import Fraction
+./tests/test_lattice_determinism.py -> from spectrum.lattice.expand import expand
+./tests/test_numeric_stability.py -> from fractions import Fraction
+./tests/test_proof_hooks.py -> from fractions import Fraction
+./tests/test_proof_hooks.py -> from spectrum.invariants.proof import register_proof, run_proofs, list_proofs
+./tests/test_proof_hooks.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_replay.py -> from spectrum.replay import run
+./tests/test_replay.py -> from spectrum.verify import verify
+./tests/test_replay.py -> import hashlib
+./tests/test_replay_engine.py -> from fractions import Fraction
+./tests/test_replay_engine.py -> from spectrum.lattice.node import LatticeNode
+./tests/test_replay_engine.py -> from spectrum.replay.replay import replay_nodes
+./tests/test_replay_engine.py -> from spectrum.serialization.canonical import serialize_nodes, hash_nodes
