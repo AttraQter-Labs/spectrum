@@ -11,7 +11,7 @@ def expand(state: LatticeState) -> Iterable[LatticeState]:
     Deterministic placeholder expansion.
 
     Guarantees:
-    - No randomness
+    - No nondeterministic sources
     - No time
     - No environment
     - Canonical ordering

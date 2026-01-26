@@ -19,7 +19,7 @@ def mine(states: Iterable[Tuple[Fraction, ...]]) -> Tuple[Invariant, ...]:
     Deterministic placeholder invariant miner.
 
     Guarantees:
-    - No randomness
+    - No nondeterministic sources
     - No time
     - No environment
     - Canonical ordering

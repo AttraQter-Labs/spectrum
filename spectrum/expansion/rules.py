@@ -3,7 +3,7 @@ Deterministic lattice expansion rules.
 
 Rules:
 - Pure function
-- No randomness
+- No nondeterministic sources
 - No time
 - Canonical ordering
 - Expansion depends ONLY on input state

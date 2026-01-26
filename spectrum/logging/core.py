@@ -3,7 +3,7 @@ Canonical deterministic execution log.
 
 Rules:
 - No timestamps
-- No randomness
+- No nondeterministic sources
 - Content-addressed
 """
 

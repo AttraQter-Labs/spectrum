@@ -28,7 +28,7 @@ def map_boundaries(
     Deterministic placeholder boundary mapper.
 
     Guarantees:
-    - No randomness
+    - No nondeterministic sources
     - No time
     - No environment
     - Canonical ordering
