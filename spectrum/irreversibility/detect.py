@@ -6,7 +6,8 @@ import numpy as np
 from typing import Iterable, Tuple
 from dataclasses import dataclass
 from fractions import Fraction
-from . import entropy_shift, is_irreversible
+from .entropy_shift import entropy_shift  # Adjusted import
+from .is_irreversible import is_irreversible  # Adjusted import
 
 @dataclass(frozen=True)
 class Transition:
@@ -21,9 +22,10 @@ def find_irreversible(
     """Return the subset of transitions showing entropy increase > threshold."""
     result = []
     for t in transitions:
-        before = [float(x) for x in t.parent_state]
-        after = [float(x) for x in t.child_state]
-        if is_irreversible(np.array(before), np.array(after), threshold):
+        # Convert states to NumPy arrays to calculate entropy differences
+        before = np.array([float(x) for x in t.parent_state])
+        after = np.array([float(x) for x in t.child_state])
+        # Check irreversibility and append to result if above the threshold
+        if is_irreversible(before, after, threshold):
             result.append(t)
     return tuple(result)
-    
