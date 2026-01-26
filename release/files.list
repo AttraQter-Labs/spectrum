@@ -50,7 +50,6 @@ spectrum/replay/__init__.py
 spectrum/replay/replay.py
 spectrum/serialization/__init__.py
 spectrum/serialization/canonical.py
-spectrum/spectrum
 tests/test_boundary_determinism.py
 tests/test_canonical_serialization.py
 tests/test_contracts.py
