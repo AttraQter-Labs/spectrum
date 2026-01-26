@@ -24,7 +24,7 @@ jobs:
 
       - name: Grep forbidden nondeterminism
         run: |
-          ! grep -R -E "(numpy\.random|random\.|time\.time\(|datetime\.now\(|datetime\.utcnow\(|uuid\.uuid|secrets\.|os\.environ)" spectrum tests --exclude="*baseline.py"
+          ! grep -R -E "(numpy\.random|random\.|time\.time\(|datetime\.now\(|datetime\.utcnow\(|uuid\.|secrets\.|os\.environ)" spectrum tests --exclude="*baseline.py"
 
       - name: Deterministic test replay
         run: |

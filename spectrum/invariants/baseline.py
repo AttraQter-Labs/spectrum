@@ -23,9 +23,9 @@ def no_nondeterministic_sources(state: str) -> bool:
     forbidden = [
         "numpy.random",
         "random.",
-        "time.time",
-        "datetime.now",
-        "datetime.utcnow",
+        "time.time(",
+        "datetime.now(",
+        "datetime.utcnow(",
         "uuid.",
         "secrets.",
         "os.environ",
