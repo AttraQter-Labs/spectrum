@@ -10,7 +10,7 @@ def measure(input_data: Mapping[str, Any]) -> Mapping[str, Any]:
     Deterministically measure a system state.
 
     Rules:
-    - No randomness
+    - No nondeterministic sources
     - No time dependence
     - Pure function
 

@@ -2,7 +2,7 @@
 Deterministic replay module.
 
 Pure function for bit-identical reproducibility.
-No external calls, no randomness, no time, no environment/state.
+No external calls, no nondeterministic sources, no time, no environment/state.
 """
 
 import hashlib
@@ -23,7 +23,7 @@ def run(input_bytes: bytes) -> bytes:
         
     Guarantees:
         - Bit-identical output for identical input
-        - No randomness
+        - No nondeterministic sources
         - No time dependence
         - No environment dependence
         - No external state
