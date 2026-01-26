@@ -1,9 +1,16 @@
+# Normalize all text files to LF for deterministic hashing
 * text=auto eol=lf
 
-*.py text diff=python
-*.md text
-*.yml text
-*.yaml text
+# Explicit formats
+*.py   text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.csv  text eol=lf
+*.txt  text eol=lf
 
-# Prevent platform-specific diffs
-*.lock -diff
+# Binary artifacts
+*.png binary
+*.jpg binary
+*.html text eol=lf
+*.dot  text eol=lf
