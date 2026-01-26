@@ -2,6 +2,7 @@
 Deterministic Irreversibility Detector — basic skeleton.
 """
 
+import numpy as np
 from typing import Iterable, Tuple
 from dataclasses import dataclass
 from fractions import Fraction
